@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RayP-Manufacture Layered Process Audit plan-2026</title>
+  <title>RayP Logistic Layered Process Audit Checklist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -44,13 +44,13 @@
 <body>
 <div class="app">
   <header class="topnav">
-    <div class="brand"><span>RayP-Manufacture<small>Layered Process Audit Plan-2026</small></span></div>
+    <div class="brand"><span>RayP-Manufacture<small>Layered Process Audit Checklist – Logistic</small></span></div>
     <div class="user-chip"><div><b>หน้าสำหรับพนักงาน</b><div class="role">กรอกและส่งผลการ Audit</div></div><a class="admin-login no-print" href="login.html">Admin Login</a></div>
   </header>
 
   <main class="page">
     <div class="page-head">
-      <div><h1>RayP-Manufacture Layered Process Audit plan-2026</h1><p>หน้านี้ใช้สำหรับกรอกและส่งผลการ Audit เท่านั้น</p></div>
+      <div><h1>RayP Logistic Layered Process Audit Checklist</h1><p>หน้านี้ใช้สำหรับกรอกและส่งผลการ Audit เท่านั้น</p></div>
       <div class="toolbar no-print">
         <button class="btn" id="saveBtn">บันทึกร่าง</button>
         <button class="btn" id="excelBtn">ดาวน์โหลด Excel</button>
@@ -64,7 +64,7 @@
       <input id="auditNo" type="hidden" />
       <input id="auditDate" type="hidden" />
       <div class="filters">
-        <div class="field"><label>Line / Area</label><select id="line"><option value="" selected disabled>เลือก Line / Area</option><option>Area 1 SHOE ROLLING &amp; PLATING</option><option>Area 2 SHOE BPNDING &amp; GRINDING</option><option>Area 3 U375 PARKBANK ASSY</option><option>Area 4 SERVICE KIT CALIPER KIT/GMSPO/J97</option><option>Area 5 CALIPER MACHINING LINE 1 (U375, THIN BRIDGE, APB-Mi Op10)</option><option>Area 6 CALIPER MACHINING LINE 2 (T6, P2-30A, APB-Mi Op20)</option><option>Area 7 CALIPER ASSYMBLY T6/PBR</option><option>Area 8 CALIPER ASSYMBLY LLD (U375/P2-30A/YHIN BRIDGE/APB-Mi)</option><option>Area 9 LOGISTIC-INBOUND &amp; OUTBOUND</option><option>Area 10 LOGISTIC-DECANTING</option><option>Area 11 QMM-INCOMING &amp; SP12 &amp; QUARANTINE MANAGEMENT</option><option>Area 12 MAINTENANCE</option></select></div>
+        <div class="field"><label>Line / Area</label><select id="line"><option value="" selected disabled>เลือกพื้นที่ Logistic</option><option>LOGISTIC - INBOUND</option><option>LOGISTIC - OUTBOUND</option><option>LOGISTIC - DECANTING</option><option>WAREHOUSE / STORAGE</option><option>MATERIAL PREPARATION</option><option>LINE SUPPLY</option><option>FINISHED GOODS</option><option>SHIPPING</option></select></div>
         <div class="field"><label>Audit Level</label><select id="level"><option value="" selected disabled>เลือก Audit Level</option><option>Level 1</option><option>Level 2</option><option>Level 3</option></select></div>
         <div class="field"><label>Auditor</label><input id="auditor" placeholder="ชื่อผู้ตรวจ" /></div>
         <div class="field"><label>Function</label><select id="unit"><option value="" selected disabled>เลือก Function</option><option>QMM</option><option>TEF</option><option>VSM</option><option>WH</option></select></div>
@@ -140,54 +140,56 @@ window.alert=function(message){
 };
 
 const sections = [
- {title:'1. Health, safety and environment', items:[
-  '1.1 พื้นที่การทำงานมีความสะอาดและเป็นระเบียบเรียบร้อย (ไม่มีเศษ, ฝุ่น, คราบน้ำ, น้ำมัน)',
-  '1.2 มีการสวมใส่อุปกรณ์ความปลอดภัยที่เหมาะสม (รองเท้าเซฟตี้, แว่นตา, ที่อุดหู, ถุงมือ)',
-  `1.3 มีการปฏิบัติตามกฎด้านความปลอดภัยหรือไม่
-- มีใบอนุญาตขับรถโฟร์กลิฟท์, เรียงกล่องสูงไม่เกินมาตรฐานที่กำหนด
-- มีการใช้เส้นทางเดินตามที่บริษัทกำหนด
-- ทางออก / ทางออกฉุกเฉินง่ายต่อการเข้าถึงอุปกรณ์ป้องกันไฟไหม้ (ไม่มีสิ่งกีดขวาง)
-- สารเคมี/สารจำเพาะมีการบ่งชี้ความปลอดภัยและมีภาชนะรองรับสำหรับสารเคมีเหลว`,
-  '1.4 ถังขยะและภาชนะบรรจุของวางอยู่ในพื้นที่มีป้ายบ่งชี้ / นำขยะมาทิ้งถูกต้องตามชนิดของป้ายหรือไม่']},
- {title:'2. Communication', items:[
-  '2.1 พนักงานมีความตระหนักและทราบเกี่ยวกับเคลมลูกค้า/ปัญหาคุณภาพภายใน/ข้อบกพร่องภายในที่เชื่อมโยงกับกิจกรรมของพนักงาน เช่น Quality Alert หรือไม่',
-  '2.2 มีการอัปเดตข้อมูลที่บอร์ดให้ครบถ้วนและเป็นปัจจุบัน (เช่น CIP, Hangkate) หรือไม่']},
- {title:'3. Operation instructions / work instructions / visual aids', items:[
-  '3.1 มีเอกสารมาตรฐานการปฏิบัติงานในพื้นที่การทำงานและพนักงานสามารถอ่านและเข้าใจได้ง่าย',
-  '3.2 พนักงานเข้าใจสิ่งที่อธิบายในเอกสารมาตรฐานการปฏิบัติงาน และเอกสารอธิบายขั้นตอนการปฏิบัติงานถูกต้องตามลำดับขั้นตอน',
-  '3.3 บันทึกอบรมของพนักงานมีข้อมูลเป็นปัจจุบัน',
-  '3.4 มาตรฐานการตรวจสอบด้วยสายตาง่ายต่อการเข้าถึงและอธิบายงานดี/งานเสียได้ชัดเจน',
-  '3.5 มีเอกสารในการปรับตั้งค่าของเครื่องจักรและพนักงานได้ปฏิบัติตามมาตรฐานนั้นหรือไม่',
-  '3.6 มีการ Rework ปฏิบัติตามขั้นตอนในเอกสารมาตรฐานการ Rework หรือไม่']},
- {title:'4. Product identification, cleanliness and 5S', items:[
-  '4.1 ชิ้นส่วนงานที่ยังประกอบไม่เสร็จและชิ้นงานที่ประกอบเสร็จแล้วมีการบ่งชี้และจัดวางในพื้นที่ที่กำหนด และชิ้นงาน/บรรจุภัณฑ์อยู่ในสภาพดีหรือไม่',
-  '4.2 มีการควบคุมวัตถุดิบ/ชิ้นงานตามระบบ FIFO หรือไม่',
-  '4.3 พบชิ้นงานที่ไม่ได้ใช้ / ชิ้นส่วนที่อยู่ระหว่าง Machine / โต๊ะ / สถานที่การทำงาน / สายพาน หรือไม่',
-  '4.4 มีวิธีการเคลื่อนย้ายงานเหมาะสม (มีการใช้ถุงมือ/กล่อง/รถเข็น)']},
- {title:'5. Process follow-up and control', items:[
-  '5.1 มีการดำเนินงานการผลิตตาม Parameter ที่ระบุในมาตรฐาน',
-  '5.2 มีการหยุดการผลิตเมื่อพบปัญหาและบันทึกหรือไม่',
-  '5.3 ในพื้นที่ที่มีการใช้ SPC พบมีจุดออกนอกเส้นควบคุมหรือไม่ พนักงานทราบ มีการบันทึกและมีการแก้ไขเมื่อค่าออกนอกเส้นควบคุม',
-  '5.4 มีการวัดความสามารถของกระบวนการบริเวณจุดที่ใช้ SPC และแสดงผลได้ในพื้นที่การผลิต']},
- {title:'6. Measuring equipment and Error proof (Poka-yoke)', items:[
-  '6.1 ผู้ประกอบการทราบถึงอุปกรณ์ Poka Yoke ในพื้นที่การทำงาน เข้าใจการทำงานและความสำคัญของ Poka Yoke',
-  '6.2 Poka Yoke สามารถทำงานได้ตามมาตรฐานและมีการบันทึกการทวนสอบ',
-  '6.3 เครื่องมือวัดอยู่ในสภาพพร้อมใช้งาน มีการบ่งชี้ Calibration Label และจัดเก็บในพื้นที่ที่เหมาะสมไม่เสี่ยงต่อการชำรุด']},
- {title:'7. Quality', items:[
-  '7.1 มีการบันทึกค่าตามรอบเวลา รวมถึงค่าปรับตั้งเครื่องจักร มีการควบคุมลงค่าถูกต้องตามจำนวนและความถี่',
-  '7.2 มีการควบคุมกระบวนการถูกต้องสมบูรณ์ เมื่อพบชิ้นงานที่ไม่เป็นไปตามข้อกำหนดมีการดำเนินการแก้ไข',
-  '7.3 มีการบ่งชี้ชิ้นงานที่ไม่เป็นไปตามข้อกำหนดหรือชิ้นงานต้องสงสัย โดยระบุโค้ดงานเสียและคัดแยกใส่กล่องแดง',
-  '7.4 มีกล่องแดงอยู่ในพื้นที่และอยู่ในสภาพดี ไม่พบสิ่งอื่นที่ไม่เกี่ยวข้องอยู่ข้างใน',
-  '7.5 มีงาน First-off และชิ้นงานได้ถูกจัดเก็บไว้',
-  '7.6 มีการปฏิบัติและแก้ไขปัญหาอย่างมีประสิทธิภาพ (หลังพบงานเคลม/ปัญหาของเสียภายใน)',
-  '7.7 สามารถตรวจสอบย้อนกลับได้เมื่อต้องการ (มีการระบุรายละเอียดใน Label และบันทึกครบถ้วน)',
-  '7.8 จุดควบคุมพิเศษด้านความปลอดภัยของผลิตภัณฑ์และพารามิเตอร์ของกระบวนการ รวมถึงจุดควบคุมพิเศษอื่น ๆ (ถ้ามี) เช่น จุด S, F, G ได้มีการตรวจสอบและลงบันทึกหรือไม่']},
- {title:'8. Maintenance', items:[
-  '8.1 มี Spare Parts และเครื่องมือที่เกี่ยวข้องในพื้นที่ มีการจัดเก็บและรักษาในสภาพที่เหมาะสมและสามารถนำมาใช้งานได้',
-  '8.2 ได้มีการตรวจสอบเครื่องจักรประจำวัน TPM Daily Check Sheet ในพื้นที่การทำงานหรือไม่ และกรณีตรวจแล้วไม่ได้ตามมาตรฐาน มีการแก้ไขและบันทึกไว้หรือไม่']},
- {title:'9. Layered process audit (LPA)', items:[
-  '9.1 มีการทำ Layered Audit (ตรวจสอบปัญหาที่ยังไม่ปิดจากการ Audit ครั้งที่แล้ว)',
-  '9.2 มีการดำเนินการแก้ไขปัญหาที่พบจากการ Audit ครั้งที่แล้วและมีการติดตามการแก้ไขปัญหา']},
+ {title:'1. OP Standardized Work / มาตรฐานการปฏิบัติงาน', items:[
+  `1.1 Is buffer station clearly defined? Are there related WIP/SOP?
+จุดที่จัดเก็บงานมีการกำหนดไว้อย่างชัดเจนหรือไม่ และมีเอกสาร WIP/SOP ระบุวิธีการปฏิบัติงานที่เกี่ยวข้องหรือไม่`,
+  `1.2 Parts piling-up status: Are parts piled up outside the buffer station?
+ชิ้นงานที่จัดเรียงซ้อนกันมีการระบุสถานะหรือไม่ และพบการวางชิ้นงานซ้อนกันนอกจุด Buffer หรือไม่`,
+  `1.3 Material handling standardized work check item
+มีการปฏิบัติตามมาตรฐานการทำงานหรือไม่ และการขนย้ายชิ้นงานมีมาตรฐานพร้อมจุดตรวจสอบหรือไม่`,
+  `1.4 Are any boxes standing around outside the specified area?
+มีการกำหนดพื้นที่จัดวางกล่องหรือไม่ และพบกล่องวางอยู่นอกพื้นที่ที่ระบุหรือไม่`,
+  `1.5 Does the material supplier feed components on time and keep the quantity above the alarm line?
+พนักงานคลังสินค้าส่งมอบวัตถุดิบเพื่อการผลิตตรงตามเวลาที่ต้องการ และมีจำนวนไม่น้อยกว่าเส้นเตือนหรือไม่`,
+  `1.6 Does the material supplier follow FIFO?
+พนักงานคลังสินค้าส่งมอบวัตถุดิบตามระบบ FIFO หรือไม่`,
+  `1.7 Does the material handler record the batch number of each material?
+พนักงานคลังสินค้ามีการบันทึกหมายเลข Batch ของวัตถุดิบแต่ละรายการหรือไม่`,
+  `1.8 Box management: Is the box clean and organized?
+กล่องบรรจุสะอาด เป็นระเบียบ และมีการจัดการที่ดีหรือไม่`,
+  `1.9 Cycle time: Does the material storage and delivery quantity comply with production cycle time?
+การจัดเก็บและจำนวนการส่งมอบวัตถุดิบสอดคล้องกับรอบการผลิตหรือไม่`,
+  `1.10 Shelf count: Is shelf counting performed according to schedule?
+มีการตรวจนับจำนวนสิ่งของที่จัดเก็บบนชั้นตามแผนอย่างสม่ำเสมอหรือไม่`,
+  `1.11 Receiving lane management: Does the receiving area have adequate tools, lighting and work surfaces?
+พื้นที่ตรวจรับวัตถุดิบมีเครื่องมือตรวจรับ แสงสว่าง พื้นผิวทำงาน และการระบุพื้นที่อย่างเหมาะสมหรือไม่`,
+  `1.12 Can component parts be tracked and traced by label identification? Check physical parts against the SAP system.
+ชิ้นงานสามารถติดตามและสอบกลับ Lot ได้จาก Label หรือไม่ และชิ้นงานจริงตรงกับข้อมูลในระบบ SAP หรือไม่`
+ ]},
+ {title:'2. Training Standard Check Item / มาตรฐานการฝึกอบรม', items:[
+  `2.1 Is there a training plan for associates, and is training implemented according to the plan?
+มีแผนการฝึกอบรมสำหรับพนักงานทุกคนหรือไม่ และบันทึกการฝึกอบรมเป็นไปตามแผนหรือไม่`,
+  `2.2 Did the employee attend the correct training, and are individual training records and the Training Matrix current (approval not older than 6 months)?
+พนักงานเข้าร่วมการฝึกอบรมที่ถูกต้องหรือไม่ มีบันทึกรายบุคคล และ Training Matrix เป็นปัจจุบันโดยวันที่อนุมัติไม่เกิน 6 เดือนหรือไม่`,
+  `2.3 Is training effectiveness assessed periodically? Can the operator work independently according to WI/SOP, and is the inspector familiar with appearance inspection instructions?
+มีการประเมินประสิทธิผลการฝึกอบรมเป็นระยะหรือไม่ พนักงานสามารถทำงานตาม WI/SOP ได้ด้วยตนเอง และผู้ตรวจเข้าใจมาตรฐานการตรวจสอบลักษณะภายนอกหรือไม่`,
+  `2.4 Is the training record documented?
+บันทึกการฝึกอบรมมีการจัดทำและเก็บรักษาเป็นเอกสารหรือไม่`
+ ]},
+ {title:'3. 5S Check Item / Safety / การตรวจ 5ส และความปลอดภัย', items:[
+  `3.1 Are parts handled and moved properly using gloves, boxes, trolleys, or other specified equipment?
+มีวิธีการจับและเคลื่อนย้ายชิ้นงานอย่างเหมาะสม โดยใช้ถุงมือ กล่อง รถเข็น หรืออุปกรณ์ที่กำหนดหรือไม่`,
+  `3.2 Are logistic process parameters in line with instructions?
+กระบวนการ Logistic ดำเนินงานตามพารามิเตอร์ที่ระบุในมาตรฐานหรือไม่`,
+  `3.3 Are work stops or interruptions made when problems are found and properly recorded?
+มีการหยุดการทำงานเมื่อพบปัญหา และมีการบันทึกการหยุดหรือเหตุขัดข้องหรือไม่`
+ ]},
+ {title:'4. Layered Process Audit (LPA) / การตรวจติดตามแบบลำดับชั้น', items:[
+  `4.1 Are Layered Process Audits performed? Check the previous LPA report and any open issues.
+มีการทำ Layered Process Audit และตรวจสอบปัญหาที่ยังไม่ปิดจากรายงาน Audit ครั้งก่อนหรือไม่`,
+  `4.2 Are corrective actions for open points from previous LPAs planned and followed up? Is there an action follow-up list?
+มีแผนแก้ไขและติดตามปัญหาที่ยังไม่ปิดจาก LPA ครั้งก่อน พร้อมรายการติดตาม Action หรือไม่`
+ ]}
 ];
 
 const state = { answers:{}, comments:{}, custom:{}, images:{} };
@@ -278,7 +280,7 @@ async function submitAudit(){
   try{
     if(!window.firebase)throw new Error('โหลด Firebase ไม่สำเร็จ กรุณาตรวจสอบอินเทอร์เน็ต');
     if(!firebase.apps.length)firebase.initializeApp(window.LPA_FIREBASE_CONFIG);
-    const ref=firebase.database().ref('lpaAudits').push();
+    const ref=firebase.database().ref('logisticLpaAudits').push();
     await ref.set({id:ref.key,createdAt:new Date().toISOString(),...payload});
     localStorage.removeItem(storageKey());
     showSubmitSuccess();
